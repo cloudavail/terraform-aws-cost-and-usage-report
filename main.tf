@@ -26,7 +26,7 @@ resource "aws_s3_bucket_public_access_block" "cost_and_usage_report_bucket_publi
 # the policy below is documented here: https://docs.aws.amazon.com/cur/latest/userguide/dataexports-s3-bucket.html
 # the policy does not follow least permission principle so two tickets have been filed:
 # - an AWS Support Ticket here: https://support.console.aws.amazon.com/support/home#/case/?displayId=173732174900900&language=en
-# - an AWS Documentation Ticket: 
+# - an AWS Documentation Ticket: no ticket id was provided
 data "aws_iam_policy_document" "cost_and_usage_report_bucket_policy_document" {
   statement {
     sid    = "EnableAWSDataExportsToWriteToS3AndCheckPolicy"
