@@ -48,8 +48,8 @@ data "aws_iam_policy_document" "cost_and_usage_report_bucket_policy_document" {
       test     = "StringLike"
       variable = "aws:SourceArn"
       values = [
-        "arn:aws:cur:us-east-1:${data.aws_caller_identity.current.account_id}:definition/*",
-        "arn:aws:bcm-data-exports:us-east-1:${data.aws_caller_identity.current.account_id}:export/*"
+        "arn:aws:cur:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:definition/*",
+        "arn:aws:bcm-data-exports:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:export/*"
       ]
     }
     resources = [
