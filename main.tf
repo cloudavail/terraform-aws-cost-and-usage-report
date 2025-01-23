@@ -53,8 +53,8 @@ data "aws_iam_policy_document" "cost_and_usage_report_bucket_policy_document" {
       ]
     }
     resources = [
-      aws_s3_bucket.cost_and_usage_report_bucket.bucket,
-      "${aws_s3_bucket.cost_and_usage_report_bucket.bucket}/*",
+      aws_s3_bucket.cost_and_usage_report_bucket.arn,
+      "${aws_s3_bucket.cost_and_usage_report_bucket.arn}/*"
     ]
   }
 }
