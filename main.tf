@@ -59,6 +59,11 @@ data "aws_iam_policy_document" "cost_and_usage_report_bucket_policy_document" {
   }
 }
 
+resource "aws_s3_bucket_policy" "cost_and_usage_report_bucket_policy_document" {
+  bucket = aws_s3_bucket.cost_and_usage_report_bucket.id
+  policy = data.aws_iam_policy_document.cost_and_usage_report_bucket_policy_document.json
+}
+
 resource "aws_bcmdataexports_export" "bcmdataexports_export" {
   export {
     name = var.bcmdataexports_export_name
